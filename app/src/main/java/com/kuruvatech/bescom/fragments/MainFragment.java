@@ -53,31 +53,11 @@ import org.json.JSONObject;
 import java.io.IOException;
 import java.util.ArrayList;
 
-//import cz.msebera.android.httpclient.HttpEntity;
-//import cz.msebera.android.httpclient.HttpResponse;
-//import cz.msebera.android.httpclient.client.HttpClient;
-//import cz.msebera.android.httpclient.client.methods.HttpGet;
-//import cz.msebera.android.httpclient.impl.client.DefaultHttpClient;
-//import cz.msebera.android.httpclient.protocol.HTTP;
-//import cz.msebera.android.httpclient.util.EntityUtils;
 
-//import com.google.android.gms.ads.AdView;
 
 
 public class MainFragment extends Fragment {
-    private static final String TAG_FEEDS = "newsfeed";
-    private static final String TAG_SCROLLIMAGES = "scrollimages";
-    private static final String TAG_HEADING = "heading";
-    private static final String TAG_DESCRIPTION = "description";
-    private static final String TAG_FEEDIMAGES = "feedimages";
-//    private static final String TAG_URL = "url";
-    private static final String TAG_VIDEO = "feedvideo";
-    public static final String API_KEY = "AIzaSyBRLKO5KlEEgFjVgf4M-lZzeGXW94m9w3U";
-    public static final String VIDEO_ID = "gy5_T2ACerk";
-    private static final String TAG_TIME = "time";
-    private static final String TAG_FEEDVIDEOS = "feedvideos";
-    private static final String TAG_FEEDAUDIOS = "feedaudios";
-    private static final String TAG_URL = "url";
+
     private static final String TAG_FEEDERNO = "feederno";
     private static final String TAG_FEEDERNAME = "feedername";
     private static final String  TAG_TIMINGS = "timings";
@@ -114,14 +94,10 @@ public class MainFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
+
         MobileAds.initialize(getActivity(), Constants.ADMOBAPPID);
         rootview = inflater.inflate(R.layout.fragment_main, container, false);
-       // listView = (RecyclerView) rootview.findViewById(R.id.listView_feedlist);
-      //  video_cardview = (CardView) rootview.findViewById(R.id.video_cardview);
-     //   video_cardview.setVisibility(View.GONE);
-       // recyclerView=(RecyclerView)view.findViewById(R.id.video_list);
-     //   listView.setHasFixedSize(true);
+
         //to use RecycleView, you need a layout manager. default is LinearLayoutManager
         LinearLayoutManager linearLayoutManager=new LinearLayoutManager(getContext());
         linearLayoutManager.setOrientation(LinearLayoutManager.VERTICAL);
@@ -131,21 +107,7 @@ public class MainFragment extends Fragment {
        // adRequest.setTesting(true);
       //  mAdView.setAdUnitId("ca-app-pub-3940256099942544/6300978111");
         mAdView.loadAd(adRequest);
-//        PublisherAdView adView = new PublisherAdView(getActivity());
-//        adView.setAdSizes(AdSize.SMART_BANNER);
-        //adView.setAdUnitId("/6499/example/banner");
-//       // adView = rootview.findViewById(R.id.publisherAdView);
-// //       AdRequest adRequest = new AdRequest.Builder().build();
-//
-//        mPublisherAdView = rootview.findViewById(R.id.publisherAdView);
-//     //   PublisherAdRequest adRequest = new PublisherAdRequest.Builder().build();
-//        PublisherAdRequest.Builder publisherAdRequestBuilder = new PublisherAdRequest.Builder();
-//        publisherAdRequestBuilder.addTestDevice(PublisherAdRequest.DEVICE_ID_EMULATOR);
-//        PublisherAdRequest adRequest =  publisherAdRequestBuilder.build();
-//        mPublisherAdView.loadAd(adRequest);
-//        adView.loadAd(adRequest);
-       // rootview.s
-        //noFeedstv = (TextView)rootview.findViewById(R.id.textView_no_feeds);
+
         session = new SessionManager(getActivity().getApplicationContext());
         swipeRefreshLayout = (SwipeRefreshLayout) rootview.findViewById(R.id.swipe_refresh_layout);
         ((MainActivity) getActivity())
@@ -154,9 +116,7 @@ public class MainFragment extends Fragment {
         isSwipeRefresh = false;
         feedList = new ArrayList<FeedItem2>();
         scrollimages = new ArrayList<String>();
-     //   listView.getRecycledViewPool().clear();
-      //  adapter2 = new  MainAdapter(getActivity(),feedList);
-    //    listView.setAdapter(adapter2);
+
 
       //  feedList  =session.getLastNewsFeed();
 //        if(feedList !=null)
@@ -165,21 +125,7 @@ public class MainFragment extends Fragment {
 //        }
 
 
-        //handler = new Handler();
-      //  pager = (MyViewPager) rootview.findViewById(R.id.pager);
-//        int displayWidth2 =pager.getWidth();
-//        int displayHeight2 = pager.getHeight();
-//        int displayHeight = getActivity().getWindowManager().getDefaultDisplay().getHeight();
-       // int displayWidth = getActivity().getWindowManager().getDefaultDisplay().getWidth();
-//        String dimention = " height=>" + String.valueOf(displayHeight) + " width=>" + String.valueOf(displayWidth) +
-//                " height2=>" + String.valueOf(displayHeight2) + "width2=>" + String.valueOf(displayWidth2);
-//        alertMessage(dimention);
-     //   pagerAdapter =new ScreenSlidePagerAdapter(getActivity().getSupportFragmentManager(),getActivity().getApplicationContext(),displayWidth);
-       // pager.setPageTransformer(true, new ZoomOutPageTransformer());
 
-     //   indicator = (CirclePageIndicator) rootview.findViewById(R.id.indicator);
-
-//pager.setMinimumHeight();
 
         swipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
             @Override
@@ -356,33 +302,7 @@ public class MainFragment extends Fragment {
             e.printStackTrace();
         }
     }
-//    public void initAdapter()
-//    {
-//
-//     //   adapter = new FeedAdapter(getActivity(),R.layout.feeditem,feedList);
-//        //listView.getRecycledViewPool().clear();
-//     //   adapter2.notifyDataSetChanged();
-//
-//        if(feedList.size() > 0 ) {
-//            noFeedstv.setVisibility(View.INVISIBLE);
-//        }
-//        else
-//        {
-//            noFeedstv.setVisibility(View.VISIBLE);
-//        }
-//        if(scrollimages != null && scrollimages.size()>2) {
-//            pagerAdapter.addAll(scrollimages);
-//            pager.setAdapter(pagerAdapter);
-//            indicator.setViewPager(pager);
-//            pager.setVisibility(View.VISIBLE);
-//            video_cardview.setVisibility(View.VISIBLE);
-//        }
-//        else
-//        {
-//            video_cardview.setVisibility(View.GONE);
-//        }
-//
-//    }
+
     public void getFeeds()
     {
         String getFeedsUrl = "http://bescom.herokuapp.com/v1/vendor/menu/krv";//Constants.GET_FEEDS_URL;
@@ -556,22 +476,8 @@ public  class JSONAsyncTask extends AsyncTask<String, Void, Boolean> {
 
     }
 
-
     @Override
     public void onPause() {
         super.onPause();
- //       handler.removeCallbacks(runnable);
     }
-
-//	    Runnable runnable = new Runnable() {
-//        public void run() {
-//            if (sliderMaxImages == sliderIndex) {
-//                sliderIndex = 0;
-//            } else {
-//                sliderIndex++;
-//            }
-//            pager.setCurrentItem(sliderIndex, true);
-//            handler.postDelayed(this, delayMiliSec);
-//        }
-//    };
 }
