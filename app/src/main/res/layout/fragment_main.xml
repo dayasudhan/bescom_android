@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tmall="http://schemas.android.com/apk/res-auto"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/download"
+    >
+ 
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:orientation="vertical">
+
+        <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+            android:id="@+id/swipe_refresh_layout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <!--<android.support.design.widget.CollapsingToolbarLayout-->
+                <!--android:id="@+id/collapsing_toolbar"-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="match_parent"-->
+                <!--android:fitsSystemWindows="true"-->
+                <!--app:contentScrim="?attr/colorPrimary"-->
+                <!--app:expandedTitleMarginEnd="64dp"-->
+                <!--app:expandedTitleMarginStart="48dp"-->
+                <!--app:expandedTitleTextAppearance="@android:color/transparent"-->
+                <!--app:layout_scrollFlags="scroll|exitUntilCollapsed">-->
+            <!--gagan-->
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_alignParentBottom="true"
+                android:scaleType="fitXY"
+                android:layout_marginTop="2dp"
+                android:layout_marginBottom="2dp"
+
+                >
+                <ScrollView
+                    android:id="@+id/widget54"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    xmlns:android="http://schemas.android.com/apk/res/android"
+                    >
+                <TableLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/table_layout">
+
+                </TableLayout>
+                </ScrollView>
+                <!--gagan-->
+
+            <!--</RelativeLayout>-->
+
+        <!--<RelativeLayout-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_marginTop="5dp"-->
+            <!--android:layout_below="@+id/swypingImage"-->
+
+            <!--android:id="@+id/order_details_lay"-->
+            <!--&gt;-->
+
+
+<!--                <androidx.cardview.widget.CardView-->
+<!--                    android:id="@+id/video_cardview"-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content"-->
+
+<!--                    android:layout_marginTop="10dp"-->
+<!--                    android:clickable="true"-->
+<!--                    tmall:cardBackgroundColor="@android:color/black"-->
+<!--                    tmall:cardCornerRadius="5dp"-->
+<!--                    tmall:cardElevation="10dp"-->
+
+<!--                    tmall:cardPreventCornerOverlap="false"-->
+<!--                    tmall:cardUseCompatPadding="true"/>-->
+
+<!--                <androidx.recyclerview.widget.RecyclerView-->
+<!--                android:layout_below="@+id/video_cardview"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:id="@+id/listView_feedlist"-->
+
+<!--                android:layout_centerHorizontal="true"-->
+<!--                android:layout_alignParentRight="true"-->
+<!--                android:layout_marginTop="0dp"-->
+<!--                />-->
+
+
+<!--                <TextView-->
+<!--                    android:id="@+id/textView_no_feeds"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_centerHorizontal="true"-->
+<!--                    android:layout_centerVertical="true"-->
+<!--                    android:layout_marginLeft="20dp"-->
+<!--                    android:layout_marginRight="20dp"-->
+<!--                    android:gravity="center"-->
+<!--                    android:text="Coming soon..."-->
+<!--                    android:textAppearance="?android:attr/textAppearanceMedium"-->
+<!--                    android:textColor="@color/title_text_color"-->
+<!--                    android:textSize="16sp"-->
+<!--                    android:visibility="invisible" />-->
+
+                <com.google.android.gms.ads.AdView
+                    xmlns:ads="http://schemas.android.com/apk/res-auto"
+                    android:id="@+id/adView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_alignParentBottom="true"
+                    ads:adSize="SMART_BANNER"
+                    ads:adUnitId="ca-app-pub-3940256099942544/6300978111">
+                </com.google.android.gms.ads.AdView>
+
+
+
+            </RelativeLayout>
+
+        </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+    </LinearLayout>
+
+</RelativeLayout>
+
+
